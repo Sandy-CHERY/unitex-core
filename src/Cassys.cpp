@@ -2821,6 +2821,8 @@ int cascade(const char* original_text, int in_place, int must_create_directory, 
 
     // make a copy of the last resulting text of the cascade in the file named _csc.raw
     sprintf(textbuf->result_file_name_raw,"%s_csc.raw", textbuf->text_name_without_extension);
+    get_path(text, textbuf->path);
+    sprintf(textbuf->last_resulting_text_path, "%s", textbuf->last_labeled_text_name);
     sprintf(textbuf->result_file_name_path_raw,"%s", textbuf->result_file_name_raw);
     copy_file(textbuf->result_file_name_path_raw, textbuf->last_resulting_text_path);
 
